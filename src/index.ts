@@ -10,11 +10,9 @@ export type WhenParameters<E extends string | number, CE extends E, R> = {
   expression: E;
   cases: Record<CE, R>;
 } & If<
-  IsEqual<E, string> extends true
-    ? true
-    : IsEqual<E, number> extends true
-    ? true
-    : IsNotEqual<ToUnion<E>, ToUnion<CE>>,
+  IsEqual<E, string> extends true ? true
+  : IsEqual<E, number> extends true ? true
+  : IsNotEqual<ToUnion<E>, ToUnion<CE>>,
   { fallback: R }
 >;
 

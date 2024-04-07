@@ -2,15 +2,18 @@
   "compilerOptions": {
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "target": "es2018",
+    "target": "es2020",
     "allowJs": true,
     "resolveJsonModule": true,
     "moduleDetection": "force",
     "strict": true,
     "noUncheckedIndexedAccess": true,
-    "moduleResolution": "Bundler",
-    "module": "ESNext",
-    "noEmit": true,
-    "lib": ["esnext", "dom", "dom.iterable"]
+    "moduleResolution": "NodeNext",
+    "module": "NodeNext",
+    "outDir": "dist",
+    "sourceMap": true,
+    "lib": ["esnext", "dom", "dom.iterable"],
+    "declaration": true,
+    "jsx": "react-jsx"
   }
 }
