@@ -21,12 +21,11 @@ export const when = <E extends string | number, CE extends E, R>({
   cases,
   ...rest
 }: WhenParameters<E, CE, R>) => {
-  if (!(expression in cases || 'fallback' in rest)) {
+  if (expression in cases) {
+    return cases[expression as CE];
+  } else if ('fallback' in rest) {
+    return rest.fallback as R;
+  } else {
     throw new Error(`The expression did not match any case and fallback wasn't provided!`);
   }
-
-  const match = cases[expression as CE] as R | undefined;
-  const fallback = (rest as { fallback?: R }).fallback;
-
-  return (match ?? fallback) as R;
 };
