@@ -1,5 +1,11 @@
 # typesafe-react
 
+## 0.2.2
+
+### Patch Changes
+
+- f0d3c6f: Folder restructure bugfix
+
 ## 0.2.1
 
 ### Patch Changes
