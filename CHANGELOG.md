@@ -1,5 +1,11 @@
 # typesafe-react
 
+## 0.3.1
+
+### Patch Changes
+
+- f4d6f10: Bugfix: when's cases returning null or undefined will not cause the function to return fallback.
+
 ## 0.3.0
 
 ### Minor Changes
