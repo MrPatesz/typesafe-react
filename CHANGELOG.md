@@ -1,5 +1,11 @@
 # typesafe-react
 
+## 0.3.0
+
+### Minor Changes
+
+- eac8114: Show: Component for conditional rendering.
+
 ## 0.2.2
 
 ### Patch Changes
