@@ -1,12 +1,12 @@
 {
   "name": "typesafe-react",
   "license": "MIT",
-  "version": "0.2.1",
-  "main": "dist/**.js",
-  "module": "dist/**.mjs",
-  "types": "dist/**.d.ts",
+  "version": "0.2.0",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsup src/ --format cjs,esm --dts",
+    "build": "tsup src/index.ts --format cjs,esm --dts",
     "release": "pnpm run build && changeset publish",
     "lint": "tsc"
   },
