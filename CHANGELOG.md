@@ -4,6 +4,12 @@
 
 ### Patch Changes
 
+- 1be16b4: Folder restructure bugfix
+
+## 0.2.1
+
+### Patch Changes
+
 - cd9a39b: Folder restructure bugfix
 
 ## 0.2.0
