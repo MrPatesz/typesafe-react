@@ -1,9 +1,20 @@
-import { type PropsWithChildren, type ReactElement } from 'react';
+import { type ReactNode } from 'react';
 
-export const Show = ({
-  children,
+export const Show = <T,>({
   when,
   fallback,
-}: PropsWithChildren<{ when: unknown; fallback?: ReactElement }>) => {
-  return <>{when ? children : fallback}</>;
+  ...rest
+}: { when: T; fallback?: ReactNode } & (
+  | {
+      children: ReactNode;
+    }
+  | {
+      children?: never;
+      childrenFn: (data: NonNullable<T>) => ReactNode;
+    }
+)) => {
+  if (!when) {
+    return fallback;
+  }
+  return 'childrenFn' in rest ? rest.childrenFn(when) : rest.children;
 };
