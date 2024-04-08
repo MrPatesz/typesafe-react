@@ -1,5 +1,11 @@
 # typesafe-react
 
+## 0.4.0
+
+### Minor Changes
+
+- fbe2b46: Feature: Show can either receive children or childrenFn. ChildrenFn provides a way to use 'when' property's NonNullable value for rendering content.
+
 ## 0.3.1
 
 ### Patch Changes
