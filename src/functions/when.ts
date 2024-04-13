@@ -1,18 +1,15 @@
 import { type IsEqual } from 'type-fest';
-
-type If<C extends boolean, P extends object> = C extends true ? P : unknown;
-
-type IsNotEqual<T, U> = IsEqual<T, U> extends true ? false : true;
-
-type ToUnion<E extends string | number> = `${E}`;
+import { type ConditionalProperties } from '../types/conditionalProperties';
+import { type IsNotEqual } from '../types/isNotEqual';
+import { type EnumToUnion } from '../types/enumToUnion';
 
 export type WhenParameters<E extends string | number, CE extends E, R> = {
   expression: E;
   cases: Record<CE, R>;
-} & If<
+} & ConditionalProperties<
   IsEqual<E, string> extends true ? true
   : IsEqual<E, number> extends true ? true
-  : IsNotEqual<ToUnion<E>, ToUnion<CE>>,
+  : IsNotEqual<EnumToUnion<E>, EnumToUnion<CE>>,
   { fallback: R }
 >;
 
