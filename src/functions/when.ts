@@ -16,7 +16,7 @@ export type WhenParameters<E extends string | number, CE extends E, R> = {
   { fallback: R }
 >;
 
-export const when = <E extends string | number, CE extends E, R>({
+export const when = <E extends string | number, CE extends E, const R>({
   expression,
   cases,
   ...rest
