@@ -1,5 +1,11 @@
 # typesafe-react
 
+## 0.4.3
+
+### Patch Changes
+
+- 71b9f68: added README and repository
+
 ## 0.4.2
 
 ### Patch Changes
