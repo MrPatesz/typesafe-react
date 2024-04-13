@@ -16,6 +16,12 @@ export type WhenParameters<E extends string | number, CE extends E, R> = {
   { fallback: R }
 >;
 
+/**
+ * Switch with return value. Must be exhaustive or receive fallback.
+ * @param expression Expression to evaluate.
+ * @param cases Record that maps each possible value of 'expression' to a return value.
+ * @param fallback Default case.
+ */
 export const when = <E extends string | number, CE extends E, const R>({
   expression,
   cases,
