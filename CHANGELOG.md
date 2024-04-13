@@ -1,5 +1,11 @@
 # typesafe-react
 
+## 0.4.2
+
+### Patch Changes
+
+- 921e548: Feature: added JSDoc to the functions and hooks.
+
 ## 0.4.1
 
 ### Patch Changes
