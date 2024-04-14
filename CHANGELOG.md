@@ -1,5 +1,11 @@
 # typesafe-react
 
+## 0.5.1
+
+### Patch Changes
+
+- 311a852: added For to README
+
 ## 0.5.0
 
 ### Minor Changes
