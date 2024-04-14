@@ -1,5 +1,11 @@
 # typesafe-react
 
+## 0.5.0
+
+### Minor Changes
+
+- 35f74fc: Feature: For component for rendering lists.
+
 ## 0.4.3
 
 ### Patch Changes
