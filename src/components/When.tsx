@@ -27,7 +27,7 @@ export const When = <E extends string | number, CE extends E>({
     expression,
     cases,
     ...('fallback' in rest ? [rest.fallback] : []),
-  ] as Parameters<typeof when<E, CE, ReactNode>>;
+  ] as Parameters<typeof when<E, CE, ReactNode, [ReactNode]>>;
 
-  return when(...parameters);
+  return when<E, CE, ReactNode, [ReactNode]>(...parameters);
 };
