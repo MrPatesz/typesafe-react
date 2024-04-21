@@ -1,5 +1,11 @@
 # typesafe-react
 
+## 1.0.1
+
+### Patch Changes
+
+- 03bdf34: Improvement: better type inference for when function.
+
 ## 1.0.0
 
 ### Major Changes
