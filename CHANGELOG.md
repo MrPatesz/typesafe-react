@@ -1,5 +1,11 @@
 # typesafe-react
 
+## 0.5.2
+
+### Patch Changes
+
+- 856d03d: Bugfix: when now correctly expects fallback if 'E' is string | number
+
 ## 0.5.1
 
 ### Patch Changes
