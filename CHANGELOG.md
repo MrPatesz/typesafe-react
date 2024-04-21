@@ -1,5 +1,14 @@
 # typesafe-react
 
+## 1.0.0
+
+### Major Changes
+
+- 699dd73: Improvement: when is more ergonomic.
+
+  - old syntax: when({expression, cases, fallback})
+  - new syntax: when(expression, cases, fallback)
+
 ## 0.5.2
 
 ### Patch Changes
