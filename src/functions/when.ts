@@ -1,4 +1,3 @@
-import { type IsEqual } from 'type-fest';
 import { type ConditionalProperties } from '../types/conditionalProperties';
 import { type IsNotEqual } from '../types/isNotEqual';
 import { type EnumToUnion } from '../types/enumToUnion';
@@ -7,8 +6,8 @@ export type WhenParameters<E extends string | number, CE extends E, R> = {
   expression: E;
   cases: Record<CE, R>;
 } & ConditionalProperties<
-  IsEqual<E, string> extends true ? true
-  : IsEqual<E, number> extends true ? true
+  string extends E ? true
+  : number extends E ? true
   : IsNotEqual<EnumToUnion<E>, EnumToUnion<CE>>,
   { fallback: R }
 >;
