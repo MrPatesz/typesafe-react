@@ -7,7 +7,13 @@ import { type EnumToUnion } from '../types/enumToUnion';
  * @param cases Record that maps each possible value of 'expression' to a return value.
  * @param fallback Default case.
  */
-export const when = <E extends string | number, CE extends E, const R>(
+export const when = <
+  E extends string | number,
+  CE extends E,
+  const R,
+  const FT extends [F],
+  F = FT extends [infer U] ? U : never,
+>(
   expression: E,
   cases: Record<CE, R>,
   ...fallback: (
@@ -15,13 +21,13 @@ export const when = <E extends string | number, CE extends E, const R>(
     : number extends E ? true
     : IsNotEqual<EnumToUnion<E>, EnumToUnion<CE>>
   ) extends true ?
-    [R]
+    FT
   : []
 ) => {
   if (expression in cases) {
     return cases[expression as CE];
   } else if (fallback.length) {
-    return fallback.at(0) as R;
+    return fallback.at(0) as F;
   } else {
     throw new Error(`The expression did not match any case and fallback wasn't provided!`);
   }
