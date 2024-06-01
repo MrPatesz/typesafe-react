@@ -1,5 +1,15 @@
 # typesafe-react
 
+## 2.0.0
+
+### Major Changes
+
+- 21dcdce: Improvement: For is more ergonomic.
+
+  - getKey renamed to keyFn
+  - keyFn is not nullable anymore
+  - keyFn now receives index
+
 ## 1.0.1
 
 ### Patch Changes
