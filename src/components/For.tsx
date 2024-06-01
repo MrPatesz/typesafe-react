@@ -1,4 +1,4 @@
-import { cloneElement, type ReactElement, type ReactNode } from 'react';
+import { Fragment, type ReactNode } from 'react';
 import { type ConditionalProperties } from '../types/conditionalProperties';
 import { type IsNotEqual } from '../types/isNotEqual';
 
@@ -14,19 +14,19 @@ export const For = <
   I = E extends ReadonlyArray<infer T> ? T : never,
 >({
   each,
-  getKey,
+  keyFn,
   mapFn,
   ...rest
 }: {
   each: E;
-  getKey: ((item: NoInfer<I>) => string | number) | null;
-  mapFn: (item: NoInfer<I>, index: number) => ReactElement;
+  keyFn: (item: NoInfer<I>, index: number) => string | number;
+  mapFn: (item: NoInfer<I>, index: number) => ReactNode;
 } & ConditionalProperties<IsNotEqual<E, NonNullable<E>>, { fallback: ReactNode }>) => {
   if (each) {
     return (each as ReadonlyArray<I>).map((item, index) => {
+      const key = keyFn(item, index);
       const element = mapFn(item, index);
-      const key = getKey?.(item) ?? index;
-      return cloneElement(element, { key });
+      return <Fragment key={key}>{element}</Fragment>;
     });
   } else if ('fallback' in rest) {
     return rest.fallback as ReactNode;
