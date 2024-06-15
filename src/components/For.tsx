@@ -5,7 +5,7 @@ import { type IsNotEqual } from '../types/isNotEqual';
 /**
  * Component for rendering lists.
  * @param each Array to iterate over.
- * @param getKey Function that returns the key for each item. Index will be used when this is null.
+ * @param keyFn Function that returns the key for each item.
  * @param mapFn Function that returns the content for each item. No need to define key here.
  * @param fallback Content to render if 'each' is nullish. Must be provided when 'each' is nullable.
  */
