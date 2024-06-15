@@ -1,5 +1,11 @@
 # typesafe-react
 
+## 2.0.1
+
+### Patch Changes
+
+- 35951bf: Fix: fixed JSDoc of For component.
+
 ## 2.0.0
 
 ### Major Changes
