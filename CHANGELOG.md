@@ -1,5 +1,11 @@
 # typesafe-react
 
+## 2.1.0
+
+### Minor Changes
+
+- 8bf0057: Improvement: Show can receive multiple conditions.
+
 ## 2.0.1
 
 ### Patch Changes
