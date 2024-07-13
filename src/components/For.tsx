@@ -31,6 +31,6 @@ export const For = <
   } else if ('fallback' in rest) {
     return rest.fallback as ReactNode;
   } else {
-    throw new Error(`Each was nullish and fallback wasn't provided!`);
+    throw new Error(`"each" was nullish and "fallback" wasn't provided!`);
   }
 };

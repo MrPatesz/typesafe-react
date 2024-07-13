@@ -29,6 +29,6 @@ export const when = <
   } else if (fallback.length) {
     return fallback.at(0) as F;
   } else {
-    throw new Error(`The expression did not match any case and fallback wasn't provided!`);
+    throw new Error(`"expression" did not match any case and "fallback" wasn't provided!`);
   }
 };

@@ -1,4 +1,4 @@
-# Framework agnostic functions, hooks, components and types that I use regularly.
+# Framework agnostic functions, hooks and components.
 
 ## Functions
 
