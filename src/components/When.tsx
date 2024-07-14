@@ -7,7 +7,7 @@ import { type EnumToUnion } from '../types/enumToUnion';
 /**
  * Switch component. Must be exhaustive or receive fallback.
  * @param expression Expression to evaluate.
- * @param cases Record that maps each possible value of 'expression' to content.
+ * @param cases Record that maps each possible value of 'expression' to a function that returns content.
  * @param fallback Default content.
  */
 export const When = <E extends string | number, CE extends E>({
@@ -16,7 +16,7 @@ export const When = <E extends string | number, CE extends E>({
   ...rest
 }: {
   expression: E;
-  cases: Record<CE, ReactNode>;
+  cases: Record<CE, () => ReactNode>;
 } & ConditionalProperties<
   string extends E ? true
   : number extends E ? true

@@ -4,7 +4,7 @@ import { type EnumToUnion } from '../types/enumToUnion';
 /**
  * Switch with return value. Must be exhaustive or receive fallback.
  * @param expression Expression to evaluate.
- * @param cases Record that maps each possible value of 'expression' to a return value.
+ * @param cases Record that maps each possible value of 'expression' to a function that returns a value.
  * @param fallback Default case.
  */
 export const when = <
@@ -15,7 +15,7 @@ export const when = <
   F = FT extends [infer U] ? U : never,
 >(
   expression: E,
-  cases: Record<CE, R>,
+  cases: Record<CE, () => R>,
   ...fallback: (
     string extends E ? true
     : number extends E ? true
@@ -25,9 +25,9 @@ export const when = <
   : []
 ) => {
   if (expression in cases) {
-    return cases[expression as CE];
+    return cases[expression as CE]();
   } else if (fallback.length) {
-    return fallback.at(0) as F;
+    return fallback[0];
   } else {
     throw new Error(`"expression" did not match any case and "fallback" wasn't provided!`);
   }
