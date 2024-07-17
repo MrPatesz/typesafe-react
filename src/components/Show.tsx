@@ -15,9 +15,11 @@ export function Show<W = never, const T extends ReadonlyArray<unknown> = never>(
   ...rest
 }: {
   fallback?: ReactNode;
-  children: (
-    data: IsEqual<W, never> extends true ? NonNullableElements<T> : NonNullable<W>
-  ) => ReactNode;
+  children:
+    | ReactNode
+    | ((
+        data: IsEqual<W, never> extends true ? NonNullableElements<T> : NonNullable<W>
+      ) => ReactNode);
 } & (
   | {
       when: W;
@@ -30,11 +32,15 @@ export function Show<W = never, const T extends ReadonlyArray<unknown> = never>(
     if (!rest.when) {
       return fallback;
     }
-    return children(rest.when as Parameters<typeof children>[0]);
+    return children instanceof Function ?
+        children(rest.when as Parameters<typeof children>[0])
+      : children;
   } else {
     if (rest.whenAll.some((w) => !w)) {
       return fallback;
     }
-    return children(rest.whenAll as Parameters<typeof children>[0]);
+    return children instanceof Function ?
+        children(rest.whenAll as Parameters<typeof children>[0])
+      : children;
   }
 }
