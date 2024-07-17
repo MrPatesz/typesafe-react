@@ -1,5 +1,11 @@
 # typesafe-react
 
+## 3.1.0
+
+### Minor Changes
+
+- 825119f: Show accepts ReactNode as "children" again, which is useful if "when" is a boolean.
+
 ## 3.0.0
 
 ### Major Changes
