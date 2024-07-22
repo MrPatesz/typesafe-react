@@ -1,5 +1,14 @@
 # typesafe-react
 
+## 4.0.0
+
+### Major Changes
+
+- 9c95047: when's fallback is also a callback.
+
+  - old syntax: when(abc, { a: () => 'a' }, 'abc')
+  - new syntax: when(abc, { a: () => 'a' }, () => 'abc')
+
 ## 3.1.0
 
 ### Minor Changes
