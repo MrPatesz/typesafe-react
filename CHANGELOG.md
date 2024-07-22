@@ -1,5 +1,11 @@
 # typesafe-react
 
+## 4.0.1
+
+### Patch Changes
+
+- 00cf4a2: Updated README for when.
+
 ## 4.0.0
 
 ### Major Changes
