@@ -4,13 +4,13 @@
 
 ### when
 
-Switch with return value.
+Exhaustive switch statement with return value.
 
 ## Components
 
 ### When
 
-Switch component.
+Exhaustive switch component.
 
 ### Show
 
