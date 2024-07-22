@@ -2,18 +2,12 @@ import { type IsNotEqual } from '../types/isNotEqual';
 import { type EnumToUnion } from '../types/enumToUnion';
 
 /**
- * Switch with return value. Must be exhaustive or receive fallback.
+ * Exhaustive switch statement with return value.
  * @param expression Expression to evaluate.
- * @param cases Record that maps each possible value of 'expression' to a function that returns a value.
- * @param fallback Default case.
+ * @param cases Record that maps some or all possible values of 'expression' to a branch.
+ * @param fallback Default branch. Mandatory if 'cases' does not cover all possible values of 'expression'.
  */
-export const when = <
-  E extends string | number,
-  CE extends E,
-  const R,
-  const FT extends [F],
-  F = FT extends [infer U] ? U : never,
->(
+export const when = <E extends string | number, CE extends E, const R, const F = never>(
   expression: E,
   cases: Record<CE, () => R>,
   ...fallback: (
@@ -21,13 +15,13 @@ export const when = <
     : number extends E ? true
     : IsNotEqual<EnumToUnion<E>, EnumToUnion<CE>>
   ) extends true ?
-    FT
+    [() => F]
   : []
 ) => {
   if (expression in cases) {
     return cases[expression as CE]();
   } else if (fallback.length) {
-    return fallback[0];
+    return fallback[0]();
   } else {
     throw new Error(`"expression" did not match any case and "fallback" wasn't provided!`);
   }
