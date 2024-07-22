@@ -15,5 +15,7 @@
     "lib": ["esnext", "dom", "dom.iterable"],
     "declaration": true,
     "jsx": "react-jsx"
-  }
+  },
+  "include": [".eslintrc.cjs", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
 }
