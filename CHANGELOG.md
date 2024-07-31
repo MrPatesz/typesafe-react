@@ -1,5 +1,11 @@
 # typesafe-react
 
+## 5.0.1
+
+### Patch Changes
+
+- eb7fd7c: when bugfix for huge "cases" object.
+
 ## 5.0.0
 
 ### Major Changes
