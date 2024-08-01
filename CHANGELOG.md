@@ -1,5 +1,11 @@
 # typesafe-react
 
+## 5.0.2
+
+### Patch Changes
+
+- 3b8a006: Added NoInfer to Show's children callback.
+
 ## 5.0.1
 
 ### Patch Changes
