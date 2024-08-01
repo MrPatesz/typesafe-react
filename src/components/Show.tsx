@@ -13,21 +13,14 @@ export function Show<W = never, const T extends ReadonlyArray<unknown> = never>(
   fallback,
   children,
   ...rest
-}: {
-  fallback?: ReactNode;
+}: ({ when: W } | { whenAll: T }) & {
   children:
     | ReactNode
     | ((
-        data: IsEqual<W, never> extends true ? NonNullableElements<T> : NonNullable<W>
+        data: NoInfer<IsEqual<W, never> extends true ? NonNullableElements<T> : NonNullable<W>>
       ) => ReactNode);
-} & (
-  | {
-      when: W;
-    }
-  | {
-      whenAll: T;
-    }
-)) {
+  fallback?: ReactNode;
+}) {
   if ('when' in rest) {
     if (!rest.when) {
       return fallback;
