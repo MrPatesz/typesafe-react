@@ -1,5 +1,11 @@
 # typesafe-react
 
+## 5.0.3
+
+### Patch Changes
+
+- 0b3ec00: Added documentation and keywords.
+
 ## 5.0.2
 
 ### Patch Changes
