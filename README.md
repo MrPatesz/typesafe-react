@@ -26,6 +26,8 @@ console.log(when(AorB, { A: () => 'a', B: () => 'b' }));
 | `cases`      | `Record<CE, () => R>` | Record that maps some or all possible values of `expression` to a branch.                                   |
 | `fallback`   | `(() => F) \| never`  | Default branch. Mandatory (and only allowed) if `cases` does not cover all possible values of `expression`. |
 
+<br />
+
 | Generic Type | Extends            | Description                                               |
 | ------------ | ------------------ | --------------------------------------------------------- |
 | `E`          | `string \| number` | `expression`'s type. Union of strings or numbers.         |
@@ -54,6 +56,8 @@ const result2 = (
 | `expression` | `E`                           | Expression to evaluate.                                                                                                          |
 | `cases`      | `Record<CE, () => ReactNode>` | Record that maps some or all possible values of `expression` to a branch that returns content.                                   |
 | `fallback`   | `(() => ReactNode) \| never`  | Default branch that returns content. Mandatory (and only allowed) if `cases` does not cover all possible values of `expression`. |
+
+<br />
 
 | Generic Type | Extends            | Description                                               |
 | ------------ | ------------------ | --------------------------------------------------------- |
@@ -93,6 +97,8 @@ const result2 = (
 | `fallback` | `ReactNode`                                                                                                             | Content to render if `when` is falsy or `whenAll` contains some falsy elements.                                                                   |
 | `children` | `ReactNode \| ((data: NoInfer<IsEqual<W, never> extends true ? NonNullableElements<T> : NonNullable<W>>) => ReactNode)` | Children callback that receives `when` or `whenAll` and returns content to render if `when` is truthy or `whenAll` only contains truthy elements. |
 
+<br />
+
 | Generic Type | Extends                  | Description                            |
 | ------------ | ------------------------ | -------------------------------------- |
 | `W`          | `unknown`                | `when`'s type. Single condition.       |
@@ -103,24 +109,10 @@ const result2 = (
 Component for rendering lists.
 
 ```jsx
-// simple check
-const result1 = (
-  <Show when={show} fallback={`I am visible if 'show' is falsy.`}>
-    I am visible if 'show' is truthy.
-  </Show>
-);
-
-// multiple conditions
-const result1 = <Show when={[show, !hidden]}>I am visible if all conditions are truthy.</Show>;
-
-// use when's value
-const result2 = <Show when={nullableArray}>{(data) => data.length}</Show>;
-
-// use whenAll's values
-const result2 = (
-  <Show when={[nullableArray, nullableObject]} fallback={'Something went wrong!'}>
-    {([array, object]) => array.length + object.numberProperty}
-  </Show>
+const result = (
+  <For each={array} keyFn={(item) => item.id} fallback={`The array is empty.`}>
+    {(item, index) => `#${index} ${item.value}`}
+  </For>
 );
 ```
 
@@ -130,6 +122,8 @@ const result2 = (
 | `keyFn`    | `(item: NoInfer<I>, index: number) => Key`       | Function that returns the key for each item.                                 |
 | `children` | `(item: NoInfer<I>, index: number) => ReactNode` | Function that returns the content for each item. No need to define key here. |
 | `fallback` | `ReactNode`                                      | Content to render if `each` is empty.                                        |
+
+<br />
 
 | Generic Type | Extends                | Description              |
 | ------------ | ---------------------- | ------------------------ |
