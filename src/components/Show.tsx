@@ -7,7 +7,7 @@ import { type IsEqual } from 'type-fest';
  * @param when Single condition to evaluate.
  * @param whenAll Multiple conditions to evaluate.
  * @param fallback Content to render if 'when' is falsy or 'whenAll' contains some falsy elements.
- * @param children Children callback that receives 'when' or 'whenAll' and returns content to render if 'when' is truthy or 'whenAll' only constains truthy elements.
+ * @param children Children callback that receives 'when' or 'whenAll' and returns content to render if 'when' is truthy or 'whenAll' only contains truthy elements.
  */
 export function Show<W = never, const T extends ReadonlyArray<unknown> = never>({
   fallback,

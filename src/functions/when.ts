@@ -10,7 +10,7 @@ type IsNotExhaustive<E extends string | number, CE extends E> =
  * Exhaustive switch statement with return value.
  * @param expression Expression to evaluate.
  * @param cases Record that maps some or all possible values of 'expression' to a branch.
- * @param fallback Default branch. Mandatory if 'cases' does not cover all possible values of 'expression'.
+ * @param fallback Default branch. Mandatory (and only allowed) if 'cases' does not cover all possible values of 'expression'.
  */
 export const when = <E extends string | number, CE extends E, const R, const F>(
   expression: E,
