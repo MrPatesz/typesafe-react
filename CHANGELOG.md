@@ -1,5 +1,11 @@
 # typesafe-react
 
+## 5.0.4
+
+### Patch Changes
+
+- a906cea: Fixed For examples.
+
 ## 5.0.3
 
 ### Patch Changes
