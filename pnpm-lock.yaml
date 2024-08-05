@@ -11,6 +11,9 @@ dependencies:
   react-dom:
     specifier: ^18.2.0
     version: 18.2.0(react@18.2.0)
+  type-fest:
+    specifier: ^4.23.0
+    version: 4.23.0
 
 devDependencies:
   '@changesets/cli':
@@ -43,9 +46,6 @@ devDependencies:
   tsup:
     specifier: ^8.0.2
     version: 8.0.2(typescript@5.4.4)
-  type-fest:
-    specifier: ^4.15.0
-    version: 4.15.0
   typescript:
     specifier: ^5.4.4
     version: 5.4.4
@@ -3310,10 +3310,10 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /type-fest@4.15.0:
-    resolution: {integrity: sha512-tB9lu0pQpX5KJq54g+oHOLumOx+pMep4RaM6liXh2PKmVRFF+/vAtUP0ZaJ0kOySfVNjF6doBWPHhBhISKdlIA==}
+  /type-fest@4.23.0:
+    resolution: {integrity: sha512-ZiBujro2ohr5+Z/hZWHESLz3g08BBdrdLMieYFULJO+tWc437sn8kQsWLJoZErY8alNhxre9K4p3GURAG11n+w==}
     engines: {node: '>=16'}
-    dev: true
+    dev: false
 
   /typed-array-buffer@1.0.2:
     resolution: {integrity: sha512-gEymJYKZtKXzzBzM4jqa9w6Q1Jjm7x2d+sh19AdsD4wqnMPDYyvwpsIc2Q/835kHuo3BEQ7CjelGhfTsoBb2MQ==}
