@@ -1,5 +1,11 @@
 # typesafe-react
 
+## 5.0.5
+
+### Patch Changes
+
+- 48fbdf9: Fix: moved type-fest to dependencies, so IsEqual will work without needing to install type-fest for eahc project.
+
 ## 5.0.4
 
 ### Patch Changes
