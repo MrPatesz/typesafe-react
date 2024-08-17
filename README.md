@@ -35,6 +35,32 @@ console.log(when(AorB, { A: () => 'a', B: () => 'b' }));
 | `const R`    | `unknown`          | Union of return values.                                   |
 | `const F`    | `unknown`          | Fallback value.                                           |
 
+### switchTrue
+
+Switch true statement with return value.
+
+```ts
+const result = switchTrue(
+  [
+    [() => isA(), () => 'a'],
+    [() => isB(), () => 'b'],
+  ],
+  () => 'c'
+);
+```
+
+| Parameter  | Type                     | Description                                                                                                                  |
+| ---------- | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------- |
+| `cases`    | `ReadonlyArray<C>`       | Array of tuples. Each tuple has a callback that returns a condition and a callback that will run if the condition is truthy. |
+| `fallback` | `(() => F) \| undefined` | Default branch.                                                                                                              |
+
+<br />
+
+| Generic Type | Extends                          | Description                              |
+| ------------ | -------------------------------- | ---------------------------------------- |
+| `const C`    | `[() => unknown, () => unknown]` | Tuple of condition and result callbacks. |
+| `const F`    | `unknown`                        | Fallback value.                          |
+
 ## Components
 
 ### When
@@ -43,11 +69,11 @@ Exhaustive switch component.
 
 ```jsx
 // handle all cases
-const result1 = <When expression={AorB} cases={{ A: () => 'a', B: () => 'b' }} />;
+const result1 = <When expression={AorB} cases={{ A: () => <A />, B: () => <B /> }} />;
 
 // provide a fallback
 const result2 = (
-  <When expression={ABC} cases={{ A: () => 'a', B: () => 'b' }} fallback={() => 'abc'} />
+  <When expression={ABC} cases={{ A: () => <A />, B: () => <B /> }} fallback={() => <Abc />} />
 );
 ```
 
@@ -63,6 +89,27 @@ const result2 = (
 | ------------ | ------------------ | --------------------------------------------------------- |
 | `E`          | `string \| number` | `expression`'s type. Union of strings or numbers.         |
 | `CE`         | `E`                | Union of covered `cases`. Subunion of `E` or same as `E`. |
+
+### SwitchTrue
+
+Switch true component.
+
+```jsx
+const result = (
+  <SwitchTrue
+    cases={[
+      [() => isA(), () => <A />],
+      [() => isB(), () => <B />],
+    ]}
+    fallback={() => <Fallback />}
+  />
+);
+```
+
+| Prop       | Type                                              | Description                                                                                                                                     |
+| ---------- | ------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| `cases`    | `ReadonlyArray<[() => unknown, () => ReactNode]>` | Array of tuples. Each tuple has a callback that returns a condition and a callback that will run if the condition is truthy and return content. |
+| `fallback` | `(() => ReactNode) \| undefined`                  | Default branch that returns content.                                                                                                            |
 
 ### Show
 
