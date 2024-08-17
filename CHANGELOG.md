@@ -1,5 +1,11 @@
 # typesafe-react
 
+## 5.1.0
+
+### Minor Changes
+
+- cfd8268: Feature: `switchTrue` function and `SwitchTrue` component added.
+
 ## 5.0.6
 
 ### Patch Changes
