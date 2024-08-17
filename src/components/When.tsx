@@ -3,7 +3,7 @@ import { when } from '../functions/when';
 import { type ConditionalProperties } from '../types/conditionalProperties';
 
 type ParametersOfWhen<E extends string | number, CE extends E> = Parameters<
-  typeof when<E, CE, ReactNode, ReactNode>
+  typeof when<E, CE, () => ReactNode, ReactNode>
 >;
 
 type IsNotExhaustive<E extends string | number, CE extends E> =
@@ -29,5 +29,5 @@ export const When = <E extends string | number, CE extends E>({
     ...('fallback' in rest ? [rest.fallback] : []),
   ] as ParametersOfWhen<E, CE>;
 
-  return when<E, CE, ReactNode, ReactNode>(...parameters);
+  return when<E, CE, () => ReactNode, ReactNode>(...parameters);
 };
