@@ -1,5 +1,11 @@
 # typesafe-react
 
+## 5.0.6
+
+### Patch Changes
+
+- 1fae19d: Bugfix: `when` will correctly infer different return types in `cases`.
+
 ## 5.0.5
 
 ### Patch Changes
