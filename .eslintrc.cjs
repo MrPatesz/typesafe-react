@@ -9,6 +9,15 @@ const config = {
     'plugin:react-hooks/recommended',
   ],
   rules: {
+    curly: ['error', 'all'],
+    'no-restricted-exports': ['error', { restrictDefaultExports: { direct: true } }],
+    'no-restricted-syntax': [
+      'error',
+      {
+        selector: 'SwitchCase > *.consequent[type!="BlockStatement"]',
+        message: 'Switch cases without blocks are disallowed.',
+      },
+    ],
     '@typescript-eslint/method-signature-style': 'error',
     '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
     '@typescript-eslint/array-type': [
