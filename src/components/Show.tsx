@@ -1,6 +1,7 @@
 import { type ReactNode } from 'react';
 import { type IsEqual } from 'type-fest';
 import { type NonNullableElements } from '../types/nonNullableElements';
+import { isFunction } from '../utils/isFunction';
 
 /**
  * Component to conditionally render content.
@@ -31,14 +32,14 @@ export function Show<
         if (!rest.when) {
             return fallback;
         }
-        return children instanceof Function ?
+        return isFunction(children) ?
                 children(rest.when as Parameters<typeof children>[0])
             :   children;
     } else {
         if (rest.whenAll.some((w) => !w)) {
             return fallback;
         }
-        return children instanceof Function ?
+        return isFunction(children) ?
                 children(rest.whenAll as Parameters<typeof children>[0])
             :   children;
     }

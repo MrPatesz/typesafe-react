@@ -175,3 +175,34 @@ const result = (
 | Generic Type | Extends                | Description              |
 | ------------ | ---------------------- | ------------------------ |
 | `I`          | `NonNullable<unknown>` | `each`'s elements' type. |
+
+### Repeat
+
+Component to render content multiple times. Useful for displaying the loading skeleton of a list.
+
+```jsx
+// skeleton of a list
+const result1 = (
+  <Repeat times={7}>
+    <Skeleton h={16} />
+  </Repeat>
+);
+
+// chess board
+const result2 = (
+  <Repeat times={8}>
+    {(x) => (
+      <div style={{ display: 'flex' }}>
+        <Repeat times={8}>
+          {(y) => <Field x={x} y={y} />}
+        </Repeat>
+      </div>
+    )}
+  </Repeat>
+);
+```
+
+| Prop       | Type                                        | Description                                                            |
+| ---------- | ------------------------------------------- | ---------------------------------------------------------------------- |
+| `times`    | `number`                                    | Number of times to repeat content.                                     |
+| `children` | `ReactNode \| (index: number) => ReactNode` | Content or callback that receives index and returns content to repeat. |
