@@ -12,9 +12,12 @@
     "keywords": [
         "typesafe",
         "react",
-        "exhaustive-switch",
         "when",
-        "control-flow"
+        "exhaustive-switch",
+        "switch-true",
+        "control-flow",
+        "result",
+        "retry"
     ],
     "packageManager": "pnpm@10.4.0",
     "scripts": {

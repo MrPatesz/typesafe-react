@@ -1,5 +1,20 @@
 # Framework agnostic functions, hooks and components.
 
+## Types
+
+### Result
+
+Result type that functions can use to indicate failure instead of throwing.
+
+```ts
+// declare a function that wraps a callback that throws on error and returns a Result
+declare function tryCatch<T>(fn: () => T): Result<T>;
+```
+
+| Generic Type | Extends   | Description                           |
+| ------------ | --------- | ------------------------------------- |
+| `T`          | `unknown` | `data`'s type when `success` is true. |
+
 ## Functions
 
 ### when
@@ -34,6 +49,27 @@ console.log(when(AorB, { A: () => 'a', B: () => 'b' }));
 | `CE`         | `E`                | Union of covered `cases`. Subunion of `E` or same as `E`. |
 | `const R`    | `unknown`          | Union of return values.                                   |
 | `const F`    | `unknown`          | Fallback value.                                           |
+
+### retry
+
+Function that retries a callback function upon failure.
+
+```ts
+// try to refresh access token
+const result = retry(refreshAccessToken, 3, 60 * 1000);
+```
+
+| Parameter | Type                       | Description                                                                                                 |
+| --------- | -------------------------- | ----------------------------------------------------- |
+| `fn`      | `() => Promise<Result<T>>` | Callback function that we want to retry upon failure. |
+| `retries` | `number`                   | Number of retries to attempt.                         |
+| `delay`   | `number \| undefined`      | Delay in milliseconds between retries.                |
+
+<br />
+
+| Generic Type | Extends   | Description                           |
+| ------------ | --------- | ------------------------------------- |
+| `T`          | `unknown` | `data`'s type when `success` is true. |
 
 ### switchTrue
 
