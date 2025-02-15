@@ -8,22 +8,22 @@ import { Fragment, type Key, type ReactNode } from 'react';
  * @param fallback Content to render if 'each' is empty.
  */
 export const For = <I extends NonNullable<unknown>>({
-  each,
-  keyFn,
-  children,
-  fallback,
+    each,
+    keyFn,
+    children,
+    fallback,
 }: {
-  each: ReadonlyArray<I>;
-  keyFn: (item: NoInfer<I>, index: number) => Key;
-  children: (item: NoInfer<I>, index: number) => ReactNode;
-  fallback?: ReactNode;
+    each: ReadonlyArray<I>;
+    keyFn: (item: NoInfer<I>, index: number) => Key;
+    children: (item: NoInfer<I>, index: number) => ReactNode;
+    fallback?: ReactNode;
 }) => {
-  if (!each.length) {
-    return fallback;
-  }
-  return each.map((item, index) => {
-    const key = keyFn(item, index);
-    const element = children(item, index);
-    return <Fragment key={key}>{element}</Fragment>;
-  });
+    if (!each.length) {
+        return fallback;
+    }
+    return each.map((item, index) => {
+        const key = keyFn(item, index);
+        const element = children(item, index);
+        return <Fragment key={key}>{element}</Fragment>;
+    });
 };

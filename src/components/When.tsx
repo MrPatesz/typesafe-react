@@ -3,11 +3,11 @@ import { when } from '../functions/when';
 import { type ConditionalProperties } from '../types/conditionalProperties';
 
 type ParametersOfWhen<E extends string | number, CE extends E> = Parameters<
-  typeof when<E, CE, () => ReactNode, ReactNode>
+    typeof when<E, CE, () => ReactNode, ReactNode>
 >;
 
 type IsNotExhaustive<E extends string | number, CE extends E> =
-  ParametersOfWhen<E, CE>[2] extends () => ReactNode ? true : false;
+    ParametersOfWhen<E, CE>[2] extends () => ReactNode ? true : false;
 
 /**
  * Exhaustive switch component.
@@ -16,18 +16,21 @@ type IsNotExhaustive<E extends string | number, CE extends E> =
  * @param fallback Default branch that returns content. Mandatory (and only allowed) if 'cases' does not cover all possible values of 'expression'.
  */
 export const When = <E extends string | number, CE extends E>({
-  expression,
-  cases,
-  ...rest
-}: {
-  expression: E;
-  cases: Record<CE, () => ReactNode>;
-} & ConditionalProperties<IsNotExhaustive<E, CE>, { fallback: () => ReactNode }>) => {
-  const parameters = [
     expression,
     cases,
-    ...('fallback' in rest ? [rest.fallback] : []),
-  ] as ParametersOfWhen<E, CE>;
+    ...rest
+}: {
+    expression: E;
+    cases: Record<CE, () => ReactNode>;
+} & ConditionalProperties<
+    IsNotExhaustive<E, CE>,
+    { fallback: () => ReactNode }
+>) => {
+    const parameters = [
+        expression,
+        cases,
+        ...('fallback' in rest ? [rest.fallback] : []),
+    ] as ParametersOfWhen<E, CE>;
 
-  return when<E, CE, () => ReactNode, ReactNode>(...parameters);
+    return when<E, CE, () => ReactNode, ReactNode>(...parameters);
 };

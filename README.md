@@ -137,12 +137,12 @@ const result2 = (
 );
 ```
 
-| Prop       | Type                                                                                                                    | Description                                                                                                                                       |
-| ---------- | ----------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `when`     | `W`                                                                                                                     | Single condition to evaluate.                                                                                                                     |
-| `whenAll`  | `T`                                                                                                                     | Multiple conditions to evaluate.                                                                                                                  |
-| `fallback` | `ReactNode`                                                                                                             | Content to render if `when` is falsy or `whenAll` contains some falsy elements.                                                                   |
-| `children` | `ReactNode \| ((data: NoInfer<IsEqual<W, never> extends true ? NonNullableElements<T> : NonNullable<W>>) => ReactNode)` | Children callback that receives `when` or `whenAll` and returns content to render if `when` is truthy or `whenAll` only contains truthy elements. |
+| Prop       | Type                                                                                                                    | Description                                                                                                                                         |
+| ---------- | ----------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `when`     | `W`                                                                                                                     | Single condition to evaluate.                                                                                                                       |
+| `whenAll`  | `T`                                                                                                                     | Multiple conditions to evaluate.                                                                                                                    |
+| `fallback` | `ReactNode`                                                                                                             | Content to render if `when` is falsy or `whenAll` contains some falsy elements.                                                                     |
+| `children` | `ReactNode \| ((data: NoInfer<IsEqual<W, never> extends true ? NonNullableElements<T> : NonNullable<W>>) => ReactNode)` | Content or callback that receives `when` or `whenAll` and returns content to render if `when` is truthy or `whenAll` only contains truthy elements. |
 
 <br />
 

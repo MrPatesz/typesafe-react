@@ -1,1 +1,2 @@
-export type ConditionalProperties<C extends boolean, P extends object> = C extends true ? P : unknown;
+export type ConditionalProperties<C extends boolean, P extends object> =
+    C extends true ? P : unknown;

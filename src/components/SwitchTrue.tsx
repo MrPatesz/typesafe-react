@@ -7,11 +7,11 @@ import { switchTrue } from '../functions/switchTrue';
  * @param fallback Default branch that returns content.
  */
 export const SwitchTrue = ({
-  cases,
-  fallback,
+    cases,
+    fallback,
 }: {
-  cases: ReadonlyArray<[() => unknown, () => ReactNode]>;
-  fallback?: () => ReactNode;
+    cases: ReadonlyArray<[() => unknown, () => ReactNode]>;
+    fallback?: () => ReactNode;
 }) => {
-  return switchTrue(cases, fallback);
+    return switchTrue(cases, fallback);
 };
