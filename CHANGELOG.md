@@ -1,5 +1,11 @@
 # typesafe-react
 
+## 5.3.0
+
+### Minor Changes
+
+- 73b2442: Feature: `retry` function and `Result` type added.
+
 ## 5.2.0
 
 ### Minor Changes
