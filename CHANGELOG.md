@@ -1,5 +1,11 @@
 # typesafe-react
 
+## 5.2.0
+
+### Minor Changes
+
+- 86f8a7f: Feature: `Repeat` component added.
+
 ## 5.1.0
 
 ### Minor Changes
@@ -49,8 +55,8 @@
 - a8f9edd: For accepts "children" callback and does not support nullish "each" anymore.
   Instead of nullability it only checks for emptiness.
 
-  - old syntax: \<For each={[]} keyFn={(i) => i.id} mapFn={(i) => i.value} />
-  - new syntax: \<For each={[]} keyFn={(i) => i.id}>{(i) => i.value}\</For>
+    - old syntax: \<For each={[]} keyFn={(i) => i.id} mapFn={(i) => i.value} />
+    - new syntax: \<For each={[]} keyFn={(i) => i.id}>{(i) => i.value}\</For>
 
 ## 4.0.1
 
@@ -64,8 +70,8 @@
 
 - 9c95047: when's fallback is also a callback.
 
-  - old syntax: when(abc, { a: () => 'a' }, 'abc')
-  - new syntax: when(abc, { a: () => 'a' }, () => 'abc')
+    - old syntax: when(abc, { a: () => 'a' }, 'abc')
+    - new syntax: when(abc, { a: () => 'a' }, () => 'abc')
 
 ## 3.1.0
 
@@ -79,13 +85,13 @@
 
 - 5220e77: Behaves similarly to switch now, it receives a callback for each case and only runs the correct code block.
 
-  - old syntax: when(AorB, { A: 'a', B: 'b' })
-  - new syntax: when(AorB, { A: () => 'a', B: () => 'b' })
+    - old syntax: when(AorB, { A: 'a', B: 'b' })
+    - new syntax: when(AorB, { A: () => 'a', B: () => 'b' })
 
-  It will only accept "children" as a callback that receives either "when" or "whenAll".
+    It will only accept "children" as a callback that receives either "when" or "whenAll".
 
-  - old syntax: \<Show when={objOrNull} childrenFn={(obj) => '...'} />
-  - new syntax: \<Show when={objOrNull}>{(obj) => '...'}\</Show>
+    - old syntax: \<Show when={objOrNull} childrenFn={(obj) => '...'} />
+    - new syntax: \<Show when={objOrNull}>{(obj) => '...'}\</Show>
 
 ## 2.1.0
 
@@ -105,9 +111,9 @@
 
 - 21dcdce: Improvement: For is more ergonomic.
 
-  - getKey renamed to keyFn
-  - keyFn is not nullable anymore
-  - keyFn now receives index
+    - getKey renamed to keyFn
+    - keyFn is not nullable anymore
+    - keyFn now receives index
 
 ## 1.0.1
 
@@ -121,8 +127,8 @@
 
 - 699dd73: Improvement: when is more ergonomic.
 
-  - old syntax: when({expression, cases, fallback})
-  - new syntax: when(expression, cases, fallback)
+    - old syntax: when({expression, cases, fallback})
+    - new syntax: when(expression, cases, fallback)
 
 ## 0.5.2
 
