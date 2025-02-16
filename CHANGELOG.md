@@ -1,5 +1,11 @@
 # typesafe-react
 
+## 5.4.0
+
+### Minor Changes
+
+- ccff7d5: Feature: `tryCatch` and `tryCatchAsync` functions added.
+
 ## 5.3.0
 
 ### Minor Changes
