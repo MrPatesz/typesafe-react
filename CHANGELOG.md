@@ -1,5 +1,11 @@
 # typesafe-react
 
+## 5.4.1
+
+### Patch Changes
+
+- 7023401: Bugfix: `tryCatch` and `tryCatchAsync` are exported from index.ts.
+
 ## 5.4.0
 
 ### Minor Changes
