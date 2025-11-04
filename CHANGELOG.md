@@ -1,5 +1,11 @@
 # typesafe-react
 
+## 5.4.2
+
+### Patch Changes
+
+- 0a31856: Bugfix: The package will work with any supported React version.
+
 ## 5.4.1
 
 ### Patch Changes
